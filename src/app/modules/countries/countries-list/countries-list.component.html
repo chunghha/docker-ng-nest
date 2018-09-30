@@ -1,0 +1,6 @@
+<h3>Countries</h3>
+<ul>
+  <li *ngFor="let country of countries | async">
+    <img [src]="country.flag" width="45" height="30"> <span>{{ country.name }} - {{ country.capital }}</span>
+  </li>
+</ul>
