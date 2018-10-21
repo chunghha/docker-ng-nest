@@ -29,8 +29,8 @@
     "@angular/platform-browser-dynamic": "~7.0.0",
     "@angular/platform-server": "~7.0.0",
     "@angular/router": "~7.0.0",
-    "@nestjs/common": "^5.3.14",
-    "@nestjs/core": "^5.3.14",
+    "@nestjs/common": "^5.4.0",
+    "@nestjs/core": "^5.4.0",
     "@nestjs/ng-universal": "^0.1.1",
     "@nguniversal/common": "~7.0.2",
     "@nguniversal/express-engine": "~7.0.2",
@@ -42,8 +42,8 @@
     "zone.js": "~0.8.26"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~0.10.1",
-    "@angular/cli": "~7.0.1",
+    "@angular-devkit/build-angular": "~0.10.2",
+    "@angular/cli": "~7.0.2",
     "@angular/compiler-cli": "~7.0.0",
     "@angular/language-service": "~7.0.0",
     "@types/jasmine": "~2.8.9",
