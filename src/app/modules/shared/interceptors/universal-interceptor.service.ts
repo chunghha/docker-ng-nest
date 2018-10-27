@@ -1,5 +1,5 @@
-import { HttpHandler, HttpInterceptor, HttpRequest } from '@angular/common/http';
 import { Inject, Injectable, Optional } from '@angular/core';
+import { HttpHandler, HttpInterceptor, HttpRequest } from '@angular/common/http';
 
 @Injectable()
 export class UniversalInterceptorService implements HttpInterceptor {

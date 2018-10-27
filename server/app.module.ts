@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { HttpModule } from '@nestjs/common/http';
-import { join } from 'path';
 import { AngularUniversalModule, applyDomino } from '@nestjs/ng-universal';
+import { join } from 'path';
 
 import { AppController } from './app.controller';
 import { CountryService } from './counrty.service';

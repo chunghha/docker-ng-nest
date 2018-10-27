@@ -1,6 +1,7 @@
 import { isPlatformBrowser } from '@angular/common';
 import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
+
 import { WindowService } from '../../services/window/window.service';
 
 @Component({
