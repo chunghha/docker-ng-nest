@@ -1,5 +1,5 @@
 import { Controller, Get, HttpStatus, Res } from '@nestjs/common';
-import { AxiosResponse } from '@nestjs/common/http/interfaces/axios.interfaces';
+import { AxiosResponse } from 'axios';
 
 import { CountryService } from './counrty.service';
 
