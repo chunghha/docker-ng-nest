@@ -1,9 +1,15 @@
-# Stage 1: Build Angular static assets
-FROM node:10-alpine as node
+ARG NODE_VERSION=10
+
+FROM node:${NODE_VERSION}-alpine AS builder
+
 WORKDIR /app
-COPY package*.json /app/
+
+COPY package.json .
 RUN npm install
-COPY ./ /app/
+COPY . .
 RUN npm run build:ssr
+
 EXPOSE 4000
-CMD ["npm", "run", "serve:ssr"]
+
+ENTRYPOINT ["npm"]
+CMD ["run", "serve:ssr"]
