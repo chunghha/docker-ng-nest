@@ -29,7 +29,7 @@ export function getWindow() {
     // Add .withServerTransition() to support Universal rendering.
     // The application ID can be any identifier which is unique on
     // the page.
-    BrowserModule.withServerTransition({appId: 'my-app'}),
+    BrowserModule.withServerTransition({ appId: 'my-app' }),
     HttpClientModule,
     TransferHttpCacheModule,
 
@@ -37,8 +37,11 @@ export function getWindow() {
     MatToolbarModule,
 
     RouterModule.forRoot([
-      { path: '', component: HomeComponent, pathMatch: 'full'},
-      { path: 'countries', loadChildren: './modules/countries/countries.module#CountriesModule'}
+      { path: '', component: HomeComponent, pathMatch: 'full' },
+      {
+        path: 'countries',
+        loadChildren: () => import('./modules//countries/countries.module').then(m => m.CountriesModule)
+      }
     ]),
     SharedModule
   ],
