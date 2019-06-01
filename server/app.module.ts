@@ -14,10 +14,11 @@ applyDomino(global, join(BROWSER_DIR, 'index.html'));
     HttpModule,
     AngularUniversalModule.forRoot({
       viewsPath: BROWSER_DIR,
-      bundle: require('./../dist/server/main.js'),
+      bundle: require('../server/main'),
+      liveReload: true,
     }),
   ],
   controllers: [AppController],
   providers: [CountryService]
 })
-export class ApplicationModule {}
+export class ApplicationModule { }
