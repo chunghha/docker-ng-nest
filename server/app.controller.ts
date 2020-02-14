@@ -1,7 +1,7 @@
 import { Controller, Get, HttpStatus, Res } from '@nestjs/common';
 import { AxiosResponse } from 'axios';
 
-import { CountryService } from './counrty.service';
+import { CountryService } from './country.service';
 
 interface Country {
   name: string;
@@ -19,7 +19,7 @@ interface Restc {
 export class AppController {
   constructor(private countryService: CountryService) { }
 
-  @Get('api/countries')
+  @Get('countries')
   findAllCountries(@Res() response) {
     let countries = {};
     return this.countryService.getCountries().subscribe(

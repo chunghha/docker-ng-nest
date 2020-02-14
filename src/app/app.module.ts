@@ -37,12 +37,14 @@ export function getWindow() {
     MatToolbarModule,
 
     RouterModule.forRoot([
-      { path: '', component: HomeComponent, pathMatch: 'full' },
-      {
+    { path: '', component: HomeComponent, pathMatch: 'full' },
+    {
         path: 'countries',
         loadChildren: () => import('./modules//countries/countries.module').then(m => m.CountriesModule)
-      }
-    ]),
+    }
+], {
+    initialNavigation: 'enabled'
+}),
     SharedModule
   ],
   providers: [

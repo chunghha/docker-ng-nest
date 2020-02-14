@@ -1,7 +1,6 @@
 ARG NODE_VERSION=12
 
 FROM node:${NODE_VERSION}-alpine AS builder
-RUN npm -g i yarn
 
 # Set to a non-root built-in user `node`
 USER node
@@ -20,9 +19,9 @@ COPY --chown=node . .
 RUN yarn build:ssr
 
 # Bind to all network interfaces so that it can be mapped to the host OS
-ENV HOST=0.0.0.0 PORT=4000
+ENV HOST=0.0.0.0 APP_PORT=4000
 
-EXPOSE ${PORT}
+EXPOSE ${APP_PORT}
 
 ENTRYPOINT ["yarn"]
 CMD ["run", "serve:ssr"]

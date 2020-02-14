@@ -1,24 +1,21 @@
-import { Module } from '@nestjs/common';
-import { HttpModule } from '@nestjs/common/http';
-import { AngularUniversalModule, applyDomino } from '@nestjs/ng-universal';
+import { Module, HttpModule } from '@nestjs/common';
+import { AngularUniversalModule } from '@nestjs/ng-universal';
+
 import { join } from 'path';
 
+import { AppServerModule } from '../src/main.server';
 import { AppController } from './app.controller';
-import { CountryService } from './counrty.service';
-
-const BROWSER_DIR = join(process.cwd(), 'dist/browser');
-applyDomino(global, join(BROWSER_DIR, 'index.html'));
+import { CountryService } from './country.service';
 
 @Module({
+  controllers: [AppController],
   imports: [
     HttpModule,
     AngularUniversalModule.forRoot({
-      viewsPath: BROWSER_DIR,
-      bundle: require('../server/main'),
-      liveReload: true,
-    }),
+      bootstrap: AppServerModule,
+      viewsPath: join(process.cwd(), 'dist/docker-ng-nest/browser')
+    })
   ],
-  controllers: [AppController],
   providers: [CountryService]
 })
-export class ApplicationModule { }
+export class AppModule {}
