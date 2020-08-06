@@ -1,11 +1,12 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 
+import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { Observable } from 'rxjs';
-import { untilDestroyed } from 'ngx-take-until-destroy';
 
 import { CountriesService } from './countries.service';
 import { Country } from '../../../interfaces/country.interface';
 
+@UntilDestroy()
 @Component({
   selector: 'app-countries-list',
   templateUrl: './countries-list.component.html',
