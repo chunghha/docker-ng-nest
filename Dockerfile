@@ -19,7 +19,7 @@ COPY --chown=node . .
 RUN yarn build:ssr
 
 # Bind to all network interfaces so that it can be mapped to the host OS
-ENV HOST=0.0.0.0 APP_PORT=4000
+ENV HOST=0.0.0.0 APP_PORT=4600
 
 EXPOSE ${APP_PORT}
 
